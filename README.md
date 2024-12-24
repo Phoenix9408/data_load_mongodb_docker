@@ -3,18 +3,19 @@
 ## Objectif
 
 Ce projet vise à lire un fichier CSV, effectuer des opérations de nettoyage, et charger les données traitées dans une collection MongoDB. Il utilise **Pandas** pour la gestion des données et **PyMongo** pour l'interaction avec MongoDB.
+La solution est encapsulé dans docker via la création de deux contenaires , mongo et application. 
 
 ---
 
 ## Table des Matières
 
-1. [Structure du Projet](#structure-du-projet)
-2. [Prérequis](#prérequis)
-3. [Installation et Configuration](#installation-et-configuration)
-4. [Utilisation](#utilisation)
-5. [Tests](#tests)
-6. [Contribution](#contribution)
-7. [Licence](#licence)
+1. [Structure du Projet]
+2. [Prérequis]
+3. [Installation et Configuration]
+4. [Utilisation]
+5. [Tests]
+6. [Docker]
+
 
 ---
 
@@ -67,6 +68,16 @@ Hospital
 Admission Type
 
 ---
+
+Docker : 
+
+La gestion des images est réalisée par des fichiers Docker dédiés à l'application et à la base de données MongoDB.
+La base de données MongoDB est initialisée à l'aide d'un fichier de configuration qui contient :
+
+      * Les utilisateurs,
+      * Le nom de la collection,
+       * Les index créés.
+De plus, un fichier docker-compose est intégré à la solution pour faciliter la gestion des conteneurs et l'orchestration des services.
 
 ## Prérequis
 

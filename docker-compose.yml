@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  mongo:
+    build:
+      context: ./mongo/dockerfile
+    container_name: mongo_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin_ocr
+      - MONGO_INITDB_ROOT_PASSWORD=admin_ocr
+    restart: always
+
+  app:
+    build:
+      context: ./Python_app
+    container_name: migration_app
+    depends_on:
+      - mongo
+    volumes:
+      - ../data:/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: "no"
+
+volumes:
+  mongo_data:

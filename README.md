@@ -79,6 +79,7 @@ La base de données MongoDB est initialisée à l'aide d'un fichier de configura
        * Les index créés.
 De plus, un fichier docker-compose est intégré à la solution pour faciliter la gestion des conteneurs et l'orchestration des services.
 
+
 ## Prérequis
 
 - [Python 3.9+](https://www.python.org/)
